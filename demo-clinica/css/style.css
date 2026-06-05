@@ -518,3 +518,25 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
 @media (max-width: 480px) {
   .footer-inner { grid-template-columns: 1fr; }
 }
+
+/* ===========================================
+   ACCESIBILIDAD — foco visible global
+   =========================================== */
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 3px;
+}
+/* Eliminar outline para mouse (no teclado) */
+:focus:not(:focus-visible) { outline: none; }
+
+/* Reducción de movimiento */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
+  html { scroll-behavior: auto; }
+}
+
+/* Alto contraste */
+@media (forced-colors: active) {
+  .btn, .esp-card, .club-card, .test-card { border: 2px solid ButtonText; }
+}
