@@ -540,3 +540,32 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
 @media (forced-colors: active) {
   .btn, .esp-card, .club-card, .test-card { border: 2px solid ButtonText; }
 }
+
+/* ===========================================
+   QA FINAL — correcciones globales
+   =========================================== */
+
+/* Secciones: espaciado consistente */
+.especialidades, .proceso, .testimonios { padding: 5rem 0; }
+
+/* Separación visual entre secciones */
+.especialidades { border-top: 1px solid var(--border); }
+
+/* Input / select font-size mínimo 16px para evitar zoom iOS */
+input, select, textarea { font-size: max(16px, 1em) !important; }
+
+/* Imágenes del hero no interfieren con el texto en pantallas pequeñas */
+@media (max-width: 360px) {
+  .hero { padding: 4.5rem 0 3rem; }
+  .hero h1 { font-size: 1.6rem; }
+}
+
+/* Asegurar que los botones del formulario tienen al menos 48px de alto */
+.cita-form .btn { min-height: 52px; font-size: 1.0625rem; }
+
+/* Corregir overflow en pantallas muy pequeñas */
+body { overflow-x: hidden; }
+.container { overflow-x: hidden; }
+
+/* Smooth underline para links de pie de página */
+.footer-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
