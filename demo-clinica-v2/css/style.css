@@ -284,7 +284,7 @@ address { font-style: normal; }
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-image: url('../demo-clinica/images_sitio_web_actual_medicgar/fondo-tecnologia-medica-ekg.jpg');
+  background-image: url('../../demo-clinica/images_sitio_web_actual_medicgar/fondo-tecnologia-medica-ekg.jpg');
   background-size: cover;
   background-position: center top;
   z-index: 0;
