@@ -468,6 +468,73 @@
     </div>
   </section>
 
+  <!-- ========== FORMULARIO DE CITA ========== -->
+  <section class="cita" id="cita" aria-labelledby="cita-heading">
+    <div class="container cita-inner">
+      <div class="cita-info reveal">
+        <h2 id="cita-heading">Agenda tu cita ahora</h2>
+        <p>Completa el formulario y confirmaremos tu turno por WhatsApp en menos de 24 horas. Sin filas, sin esperas innecesarias.</p>
+        <address class="cita-datos">
+          <div class="cita-dato">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M9 1C5.686 1 3 3.686 3 7c0 5 6 10 6 10s6-5 6-10c0-3.314-2.686-6-6-6z" stroke="#0D9488" stroke-width="1.5"/><circle cx="9" cy="7" r="2" stroke="#0D9488" stroke-width="1.5"/></svg>
+            Boyacá y Alvarado, Riobamba, Ecuador
+          </div>
+          <div class="cita-dato">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path d="M3 3h3l1.5 3.75L6 8.25C7.5 10.5 9.5 12 12 13l1.5-1.5L17 13v3c0 1-1 2-2 2C5 18 0 13 0 5c0-1 1-2 2-2z" stroke="#0D9488" stroke-width="1.5"/></svg>
+            +593 98 461 3496
+          </div>
+          <div class="cita-dato">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><rect x="1" y="3" width="16" height="12" rx="2" stroke="#0D9488" stroke-width="1.5"/><path d="M1 6l8 5 8-5" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+            egarcia@medicgar.com
+          </div>
+          <div class="cita-dato">
+            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><circle cx="9" cy="9" r="7" stroke="#0D9488" stroke-width="1.5"/><path d="M9 5v4l3 2" stroke="#0D9488" stroke-width="1.5" stroke-linecap="round"/></svg>
+            Lun–Vie 7:00–19:00 · Sáb 8:00–14:00
+          </div>
+        </address>
+      </div>
+      <form class="cita-form reveal reveal--d2" id="citaForm" novalidate aria-label="Formulario de solicitud de cita médica">
+        <div class="form-group">
+          <label for="nombre">Nombre completo <span aria-hidden="true">*</span></label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required autocomplete="name" />
+          <p class="form-error" role="alert">Por favor ingresa tu nombre.</p>
+        </div>
+        <div class="form-group">
+          <label for="telefono">Teléfono / WhatsApp <span aria-hidden="true">*</span></label>
+          <input type="tel" id="telefono" name="telefono" placeholder="+593 99 000 0000" required autocomplete="tel" />
+          <p class="form-error" role="alert">Por favor ingresa tu número.</p>
+        </div>
+        <div class="form-group">
+          <label for="especialidad">Especialidad <span aria-hidden="true">*</span></label>
+          <select id="especialidad" name="especialidad" required>
+            <option value="" disabled selected>Selecciona una especialidad</option>
+            <option value="Medicina General">Medicina General</option>
+            <option value="Pediatría">Pediatría</option>
+            <option value="Cardiología">Cardiología</option>
+            <option value="Ginecología">Ginecología</option>
+            <option value="Traumatología">Traumatología</option>
+            <option value="Odontología">Odontología</option>
+            <option value="Salud Ocupacional">Salud Ocupacional</option>
+            <option value="Laboratorio Clínico">Laboratorio Clínico</option>
+          </select>
+          <p class="form-error" role="alert">Por favor selecciona una especialidad.</p>
+        </div>
+        <div class="form-group">
+          <label for="mensaje">Motivo de la consulta <span style="font-weight:400;color:var(--muted)">(opcional)</span></label>
+          <textarea id="mensaje" name="mensaje" placeholder="Describe brevemente tu consulta..."></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary btn-full">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none" aria-hidden="true"><path fill-rule="evenodd" clip-rule="evenodd" d="M9 .75C4.44.75.75 4.44.75 9s3.69 8.25 8.25 8.25S17.25 13.56 17.25 9 13.56.75 9 .75zm-2.155 5.07c-.15-.004-.327.004-.488.366-.174.392-.664 1.613-.664 1.613s-.075.192.024.364c.1.173.23.314.344.432.115.119.272.314.374.49.102.176.047.363-.058.48-.105.118-.707.85-.768.909-.061.059-.213.118-.213.118s.142.387.673.92c.534.532 1.01.661 1.01.661s.059-.166.118-.227c.06-.06.792-.663.91-.768.119-.105.305-.159.481-.057.177.102.372.258.49.373.119.115.26.244.433.344.173.1.364.024.364.024s1.221-.49 1.613-.663c.361-.16.37-.334.364-.487-.02-.752-.293-1.42-.807-1.931-.513-.513-1.18-.786-1.931-.806z" fill="white"/></svg>
+          Confirmar por WhatsApp
+        </button>
+        <p class="form-note">
+          <svg width="14" height="14" viewBox="0 0 14 14" fill="none" aria-hidden="true"><path d="M7 1a6 6 0 100 12A6 6 0 007 1zm0 5v4M7 4.5v.5" stroke="#0D9488" stroke-width="1.3" stroke-linecap="round"/></svg>
+          Te responderemos en menos de 24 horas
+        </p>
+      </form>
+    </div>
+  </section>
+
   <script src="js/main.js"></script>
 </body>
 </html>
