@@ -435,3 +435,39 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
 @media (max-width: 480px) {
   .cita-form { padding: 1.5rem 1.25rem; }
 }
+
+/* ===========================================
+   WHATSAPP FLOTANTE
+   =========================================== */
+.whatsapp-float {
+  position: fixed; bottom: 1.75rem; right: 1.75rem; z-index: 200;
+  width: 58px; height: 58px; border-radius: 50%;
+  background: #25D366; color: #fff;
+  display: flex; align-items: center; justify-content: center;
+  box-shadow: 0 4px 20px rgba(37,211,102,.45);
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+.whatsapp-float:hover {
+  transform: scale(1.1);
+  box-shadow: 0 6px 28px rgba(37,211,102,.6);
+}
+.whatsapp-float:focus-visible {
+  outline: 3px solid #25D366; outline-offset: 4px;
+}
+.whatsapp-tooltip {
+  position: absolute; right: 68px; top: 50%; transform: translateY(-50%);
+  background: var(--primary); color: #fff;
+  padding: .35rem .85rem; border-radius: 50px;
+  font-size: .8125rem; font-weight: 600; white-space: nowrap;
+  opacity: 0; pointer-events: none;
+  transition: opacity var(--transition);
+}
+.whatsapp-float:hover .whatsapp-tooltip,
+.whatsapp-float:focus-visible .whatsapp-tooltip { opacity: 1; }
+
+/* Animación pulse */
+@keyframes wa-pulse {
+  0%, 100% { box-shadow: 0 4px 20px rgba(37,211,102,.45); }
+  50%       { box-shadow: 0 4px 36px rgba(37,211,102,.75), 0 0 0 10px rgba(37,211,102,.12); }
+}
+.whatsapp-float { animation: wa-pulse 2.5s ease-in-out infinite; }
