@@ -246,3 +246,43 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
 @media (max-width: 480px) {
   .esp-grid { grid-template-columns: 1fr; }
 }
+
+/* ===========================================
+   CLUB DE BENEFICIOS
+   =========================================== */
+.club {
+  padding: 5rem 0;
+  background: linear-gradient(135deg, var(--primary) 0%, #0d4f7c 100%);
+  color: #fff;
+}
+.club-badge {
+  display: inline-block;
+  background: rgba(230,126,34,.25); border: 1px solid rgba(230,126,34,.5);
+  color: #F5CBA7; padding: .35rem 1rem; border-radius: 50px;
+  font-size: .875rem; font-weight: 600; margin-bottom: 1rem; letter-spacing: .3px;
+}
+.club-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 240px), 1fr));
+  gap: 1.5rem; margin-bottom: 3rem;
+}
+.club-card {
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
+  border-radius: var(--radius); padding: 2rem 1.5rem;
+  text-align: center;
+  transition: background var(--transition), transform var(--transition);
+}
+.club-card:hover { background: rgba(255,255,255,.15); transform: translateY(-3px); }
+.club-card-icon {
+  width: 64px; height: 64px; margin: 0 auto 1.1rem;
+  background: rgba(230,126,34,.15); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.club-card h3 { color: #fff; margin-bottom: .5rem; font-size: 1.0625rem; }
+.club-card p  { color: rgba(255,255,255,.8); font-size: .9375rem; line-height: 1.6; }
+.club-cta     { text-align: center; }
+
+@media (max-width: 480px) {
+  .club-grid { grid-template-columns: 1fr; }
+}
