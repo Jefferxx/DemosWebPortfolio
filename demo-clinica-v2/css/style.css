@@ -541,6 +541,51 @@ address { font-style: normal; }
   }
 }
 
+/* === ESPECIALIDADES === */
+.especialidades {
+  padding-block: var(--space-xl);
+  background-color: #FFFFFF;
+}
+.especialidades-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 24px;
+}
+.especialidad-mini-card {
+  background-color: #FFFFFF;
+  border: 1px solid #F1F5F9;
+  border-radius: 16px;
+  padding: 20px;
+  text-align: left;
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  transition: transform var(--transition), border-color var(--transition);
+}
+.especialidad-mini-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--color-primary);
+}
+.especialidad-icon {
+  width: 40px;
+  height: 40px;
+  background-color: #F4F7FC;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-primary);
+  flex-shrink: 0;
+}
+.especialidad-mini-card h3 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1E293B;
+  line-height: 1.4;
+  margin-bottom: 0;
+}
+
 /* === SERVICIOS Y UNIDADES DE NEGOCIO === */
 .servicios {
   padding-block: var(--space-xl); /* strict 80px vertical padding */
@@ -633,6 +678,7 @@ address { font-style: normal; }
   border-top: 1px solid #E2E8F0;
   border-bottom: 1px solid #E2E8F0;
   text-align: center;
+  overflow: hidden;
 }
 .convenios-title {
   font-family: var(--font-body);
@@ -643,12 +689,19 @@ address { font-style: normal; }
   color: var(--color-text-muted);
   margin-bottom: 40px;
 }
-.convenios-grid {
+.marquee-container {
+  overflow: hidden;
+  width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
+}
+.marquee-track {
+  display: flex;
   gap: 48px;
+  width: max-content;
+  animation: scrollMarquee 45s linear infinite;
+}
+.marquee-track:hover {
+  animation-play-state: paused;
 }
 .convenio-logo-wrapper {
   display: flex;
@@ -656,19 +709,93 @@ address { font-style: normal; }
   justify-content: center;
   width: 140px;
   height: 50px;
+  flex-shrink: 0;
 }
 .convenio-logo-wrapper img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  opacity: 0.6;
+  opacity: 0.5;
   filter: grayscale(100%);
-  transition: opacity var(--transition), filter var(--transition), transform var(--transition);
+  transition: all 0.3s ease;
 }
 .convenio-logo-wrapper img:hover {
   opacity: 1;
   filter: grayscale(0%);
   transform: scale(1.06);
+}
+
+@keyframes scrollMarquee {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* === COBERTURA GEOGRÁFICA === */
+.cobertura {
+  background-color: #F4F7FC;
+  padding-block: var(--space-xl);
+  border-bottom: 1px solid #E2E8F0;
+}
+.cobertura-inner {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+}
+.cobertura-left {
+  flex: 0 0 35%;
+  text-align: left;
+}
+.cobertura-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  color: #1E293B;
+  margin-bottom: var(--space-sm);
+  line-height: 1.15;
+}
+.cobertura-text {
+  font-size: 1.05rem;
+  color: #64748B;
+  line-height: 1.6;
+}
+.cobertura-right {
+  flex: 0 0 60%;
+}
+.cobertura-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.ciudad-badge {
+  background-color: #FFFFFF;
+  color: #64748B;
+  font-size: 14px;
+  font-weight: 500;
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid #E2E8F0;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+  transition: transform var(--transition), color var(--transition), border-color var(--transition);
+}
+.ciudad-badge:hover {
+  transform: translateY(-2px);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+}
+@media (max-width: 991px) {
+  .cobertura-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-lg);
+  }
+  .cobertura-left, .cobertura-right {
+    width: 100%;
+    flex: none;
+  }
 }
 
 /* === PROCESO === */
