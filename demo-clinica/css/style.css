@@ -286,3 +286,47 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
 @media (max-width: 480px) {
   .club-grid { grid-template-columns: 1fr; }
 }
+
+/* ===========================================
+   PROCESO — 3 PASOS
+   =========================================== */
+.proceso { padding: 5rem 0; background: var(--surface); }
+
+.proceso-steps {
+  display: flex; align-items: center; justify-content: center;
+  gap: 0; flex-wrap: wrap;
+  list-style: none;
+}
+.proceso-step {
+  flex: 1; min-width: min(100%, 200px); max-width: 280px;
+  text-align: center; padding: 1.5rem 1rem;
+  position: relative;
+}
+.proceso-step--connector {
+  flex: 0 0 40px; min-width: 40px; max-width: 40px;
+  height: 2px; background: var(--border);
+  align-self: flex-start; margin-top: 52px;
+  padding: 0;
+}
+.step-number {
+  width: 36px; height: 36px; border-radius: 50%;
+  background: var(--primary); color: #fff;
+  font-weight: 700; font-size: .875rem;
+  display: flex; align-items: center; justify-content: center;
+  margin: 0 auto .75rem;
+}
+.step-icon {
+  width: 72px; height: 72px; margin: 0 auto 1rem;
+  background: var(--primary-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.proceso-step h3 { color: var(--primary); margin-bottom: .4rem; }
+.proceso-step p  { color: var(--text-muted); font-size: .9375rem; }
+
+@media (max-width: 640px) {
+  .proceso-steps { flex-direction: column; align-items: center; }
+  .proceso-step--connector {
+    width: 2px; height: 32px; flex: 0 0 32px; min-width: 0; max-width: none;
+    margin: 0; align-self: auto;
+  }
+}
