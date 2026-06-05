@@ -1,0 +1,18 @@
+# Datos privados del scraper — no subir al repositorio público
+*.csv
+*.xlsx
+*.xls
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Node (por si se usa en el futuro)
+node_modules/
