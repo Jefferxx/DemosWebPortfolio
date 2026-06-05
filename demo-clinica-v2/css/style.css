@@ -636,7 +636,7 @@ address { font-style: normal; }
 /* === ESPECIALIDADES === */
 .especialidades {
   padding-block: var(--space-xl);
-  background-color: #FFFFFF;
+  background-color: #F4F7FC;
 }
 .especialidades-grid {
   display: grid;
@@ -678,90 +678,7 @@ address { font-style: normal; }
   margin-bottom: 0;
 }
 
-/* === SERVICIOS Y UNIDADES DE NEGOCIO === */
-.servicios {
-  padding-block: var(--space-xl); /* strict 80px vertical padding */
-  background-color: var(--color-bg-main); /* white background #FFFFFF */
-}
-.servicios-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr); /* 2x2 grid */
-  gap: 32px;
-}
-.servicio-card {
-  background-color: #FFFFFF;
-  border: 1px solid #E2E8F0;
-  border-radius: 24px;
-  padding: 32px;
-  text-align: left;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: var(--space-sm);
-  box-shadow: none;
-  transition: transform var(--transition), border-color var(--transition);
-}
-.servicio-card:hover {
-  transform: translateY(-4px);
-  border-color: var(--color-primary);
-}
-.servicio-icon {
-  width: 54px;
-  height: 54px;
-  background-color: var(--color-secondary);
-  border-radius: 12px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: var(--color-primary);
-}
-.servicio-card h3 {
-  font-family: var(--font-body);
-  font-size: 1.35rem;
-  font-weight: 600;
-  color: #1E293B;
-  margin-bottom: 0;
-}
-.servicio-card p {
-  font-size: 1rem;
-  color: #64748B;
-  line-height: 1.6;
-  margin-bottom: var(--space-xs);
-  flex-grow: 1;
-}
-.servicio-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 4px;
-  margin-bottom: 12px;
-}
-.tag-sutil {
-  font-size: 0.73rem;
-  font-weight: 500;
-  color: #64748B;
-  background-color: #F4F7FC;
-  padding: 4px 10px;
-  border-radius: 50px;
-  border: 1px solid #E2E8F0;
-}
-.servicio-link {
-  font-size: 0.93rem;
-  font-weight: 600;
-  color: var(--color-primary);
-  display: inline-flex;
-  align-items: center;
-  transition: transform var(--transition);
-}
-.servicio-link:hover {
-  transform: translateX(4px);
-}
-@media (max-width: 768px) {
-  .servicios-grid {
-    grid-template-columns: 1fr;
-    gap: 24px;
-  }
-}
+
 
 /* === CONVENIOS / PRUEBA SOCIAL === */
 .convenios {
@@ -893,7 +810,8 @@ address { font-style: normal; }
 /* === PROCESO === */
 .proceso {
   padding-block: var(--space-xl); /* strict 80px padding vertical */
-  background-color: var(--color-secondary); /* flat clinical blue #F4F7FC */
+  background-color: #FFFFFF;
+  border-bottom: 1px solid #E2E8F0;
 }
 .proceso-steps {
   display: grid;
@@ -960,7 +878,7 @@ address { font-style: normal; }
 
 /* === TESTIMONIOS === */
 .testimonios {
-  background-color: #FFFFFF;
+  background-color: #F4F7FC;
   padding-block: 80px;
   border: none;
 }
@@ -1028,7 +946,8 @@ address { font-style: normal; }
 /* === FORMULARIO / CTA FINAL === */
 .cita {
   padding-block: 80px;
-  background-color: #F4F7FC;
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
   text-align: center;
 }
 .cita-content {
