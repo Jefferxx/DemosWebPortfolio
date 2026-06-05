@@ -213,3 +213,36 @@ p  { font-size: clamp(.9375rem, 1.5vw, 1rem); }
   .hero-ctas { flex-direction: column; }
   .hero-ctas .btn { width: 100%; }
 }
+
+/* ===========================================
+   ESPECIALIDADES
+   =========================================== */
+.especialidades { padding: 5rem 0; background: var(--bg); }
+
+.esp-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
+  gap: 1.5rem;
+}
+.esp-card {
+  background: var(--bg); border: 1px solid var(--border);
+  border-radius: var(--radius); padding: 2rem 1.5rem;
+  text-align: center;
+  box-shadow: var(--shadow);
+  transition: transform var(--transition), box-shadow var(--transition), border-color var(--transition);
+}
+.esp-card:hover {
+  transform: translateY(-4px); box-shadow: var(--shadow-lg);
+  border-color: var(--accent);
+}
+.esp-icon {
+  width: 72px; height: 72px; margin: 0 auto 1.25rem;
+  background: var(--primary-light); border-radius: 50%;
+  display: flex; align-items: center; justify-content: center;
+}
+.esp-card h3 { color: var(--primary); margin-bottom: .5rem; }
+.esp-card p  { color: var(--text-muted); font-size: .9375rem; line-height: 1.6; }
+
+@media (max-width: 480px) {
+  .esp-grid { grid-template-columns: 1fr; }
+}
