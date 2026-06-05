@@ -982,11 +982,13 @@ address { font-style: normal; }
   gap: .5rem;
 }
 .footer-col address svg { flex-shrink: 0; margin-top: 2px; }
-.footer-map iframe {
+.footer-map {
   border-radius: var(--radius);
   width: 100%;
   height: 155px;
   filter: brightness(.85) contrast(1.1);
+  display: block;
+  margin-top: 1rem;
 }
 .footer-bottom {
   padding-block: 1.5rem;
