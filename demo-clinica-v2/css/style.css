@@ -237,16 +237,73 @@ address { font-style: normal; }
 .nav-menu {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 1.25rem;
 }
 .nav-menu a {
-  font-size: .87rem;
+  font-size: 14px;
   font-weight: 500;
-  color: var(--color-text-main);
+  color: #1E293B;
   transition: color var(--transition);
   letter-spacing: .01em;
 }
 .nav-menu a:hover { color: var(--color-primary); }
+
+/* --- DROPDOWNS (CSS PURO) --- */
+.has-dropdown {
+  position: relative;
+}
+.arrow {
+  font-size: 0.6rem;
+  margin-left: 4px;
+  vertical-align: middle;
+  opacity: 0.7;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #FFFFFF;
+  border-radius: 12px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  padding: 20px;
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+.dropdown-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 200px);
+  gap: 12px;
+}
+.dropdown-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  width: 160px;
+  padding: 12px;
+}
+.dropdown-menu a {
+  font-size: 13px !important;
+  color: #64748B !important;
+  font-weight: 500 !important;
+  transition: color var(--transition) !important;
+  display: block;
+  padding: 4px 0;
+  border-bottom: none !important;
+}
+.dropdown-menu a:hover {
+  color: var(--color-primary) !important;
+}
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
 .nav-cta {
   background: var(--color-primary) !important;
   color: white !important;
@@ -287,6 +344,8 @@ address { font-style: normal; }
     transition: transform .3s ease, opacity .25s ease;
     border-bottom: 1px solid var(--color-border);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
   }
   .nav-menu.is-open {
     transform: translateY(0);
@@ -305,6 +364,39 @@ address { font-style: normal; }
     margin-top: .75rem;
     display: inline-block !important;
     width: auto !important;
+  }
+
+  /* Mobile Dropdowns */
+  .has-dropdown {
+    width: 100%;
+  }
+  .dropdown-menu {
+    position: static;
+    transform: none;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    box-shadow: none;
+    padding: 8px 0 8px 16px;
+    border-radius: 0;
+    display: none;
+    border-bottom: 1px solid var(--color-border);
+  }
+  .has-dropdown:hover .dropdown-menu {
+    display: block;
+  }
+  .dropdown-grid {
+    grid-template-columns: 1fr;
+    gap: 8px;
+  }
+  .dropdown-vertical {
+    width: 100%;
+    padding: 8px 0 8px 16px;
+  }
+  .dropdown-menu a {
+    font-size: 0.9rem !important;
+    border-bottom: none !important;
+    padding: 6px 0;
   }
 }
 
@@ -707,8 +799,8 @@ address { font-style: normal; }
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 50px;
+  width: 182px;
+  height: 65px;
   flex-shrink: 0;
 }
 .convenio-logo-wrapper img {
