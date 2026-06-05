@@ -520,6 +520,14 @@ address { font-style: normal; }
   letter-spacing: normal;
   line-height: 1.4;
 }
+.trust-cities {
+  font-size: 0.78rem;
+  color: #64748B;
+  margin-top: 8px;
+  line-height: 1.4;
+  max-width: 200px;
+  display: block;
+}
 @media (max-width: 768px) {
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -584,6 +592,22 @@ address { font-style: normal; }
   margin-bottom: var(--space-xs);
   flex-grow: 1;
 }
+.servicio-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 4px;
+  margin-bottom: 12px;
+}
+.tag-sutil {
+  font-size: 0.73rem;
+  font-weight: 500;
+  color: #64748B;
+  background-color: #F4F7FC;
+  padding: 4px 10px;
+  border-radius: 50px;
+  border: 1px solid #E2E8F0;
+}
 .servicio-link {
   font-size: 0.93rem;
   font-weight: 600;
@@ -600,6 +624,51 @@ address { font-style: normal; }
     grid-template-columns: 1fr;
     gap: 24px;
   }
+}
+
+/* === CONVENIOS / PRUEBA SOCIAL === */
+.convenios {
+  padding-block: var(--space-xl);
+  background-color: #FFFFFF;
+  border-top: 1px solid #E2E8F0;
+  border-bottom: 1px solid #E2E8F0;
+  text-align: center;
+}
+.convenios-title {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  margin-bottom: 40px;
+}
+.convenios-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 48px;
+}
+.convenio-logo-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 50px;
+}
+.convenio-logo-wrapper img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  opacity: 0.6;
+  filter: grayscale(100%);
+  transition: opacity var(--transition), filter var(--transition), transform var(--transition);
+}
+.convenio-logo-wrapper img:hover {
+  opacity: 1;
+  filter: grayscale(0%);
+  transform: scale(1.06);
 }
 
 /* === PROCESO === */
@@ -774,13 +843,46 @@ address { font-style: normal; }
 .footer {
   background-color: #FFFFFF;
   color: #1E293B;
-  padding-top: 80px;
+  padding-top: 0;
   border-top: 1px solid #E2E8F0;
+}
+.footer-emergency-bar {
+  background-color: var(--color-primary);
+  color: #FFFFFF;
+  padding-block: 20px;
+  text-align: center;
+  font-weight: 600;
+}
+.emergency-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+  font-size: 1.05rem;
+}
+.emergency-label {
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+.emergency-phone {
+  color: #FFFFFF;
+  transition: opacity var(--transition);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+}
+.emergency-phone:hover {
+  opacity: 0.8;
+  border-bottom-color: #FFFFFF;
+}
+.emergency-divider {
+  color: rgba(255, 255, 255, 0.4);
+  font-weight: 400;
 }
 .footer-inner {
   display: grid;
   grid-template-columns: 2fr 1.2fr;
   gap: var(--space-xl);
+  padding-top: 80px;
   padding-bottom: var(--space-lg);
 }
 .footer-logo img {
@@ -849,20 +951,24 @@ address { font-style: normal; }
   position: fixed;
   bottom: 2rem; right: 2rem;
   z-index: 999;
-  width: 58px; height: 58px;
-  background: #25D366;
+  width: 56px;
+  height: 56px;
+  background-color: #25D366;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  box-shadow: 0 4px 20px rgba(37,211,102,.42);
-  animation: wapulse 2.5s ease-in-out infinite;
+  box-shadow: 0 4px 16px rgba(37, 211, 102, 0.25);
   transition: transform var(--transition), box-shadow var(--transition);
 }
 .whatsapp-float:hover {
-  transform: scale(1.12);
-  box-shadow: 0 8px 32px rgba(37,211,102,.55);
-  animation: none;
+  transform: scale(1.08);
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.35);
+}
+.whatsapp-float svg {
+  width: 28px;
+  height: 28px;
+  fill: #FFFFFF;
 }
 .whatsapp-tooltip {
   position: absolute;
@@ -880,10 +986,6 @@ address { font-style: normal; }
   transition: opacity .2s ease;
 }
 .whatsapp-float:hover .whatsapp-tooltip { opacity: 1; }
-@keyframes wapulse {
-  0%,100% { box-shadow: 0 4px 20px rgba(37,211,102,.42); }
-  50%      { box-shadow: 0 4px 20px rgba(37,211,102,.42), 0 0 0 10px rgba(37,211,102,.1); }
-}
 
 /* === FOCUS & ACCESSIBILITY === */
 :focus-visible {
