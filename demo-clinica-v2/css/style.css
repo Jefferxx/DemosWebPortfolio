@@ -909,6 +909,7 @@ address { font-style: normal; }
   to   { opacity: 1; transform: translateY(0); }
 }
 .club-item {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -961,6 +962,21 @@ address { font-style: normal; }
   0%   { transform: scale(0.7); opacity: .4; }
   100% { transform: scale(1);   opacity: 1; }
 }
+/* Número de orden en esquina superior derecha */
+.club-item-num {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-family: var(--font-display);
+  font-size: 2.2rem;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(255,255,255,.08);
+  pointer-events: none;
+  user-select: none;
+  transition: color var(--transition);
+}
+.club-item:hover .club-item-num { color: rgba(2,156,128,.25); }
 .club-item strong {
   display: block;
   font-family: var(--font-display);
