@@ -854,6 +854,13 @@ address { font-style: normal; }
   transform: scale(1.1);
   box-shadow: 0 4px 16px rgba(2,156,128,.22);
 }
+.club-item-icon.icon-popped {
+  animation: iconPop .45s cubic-bezier(.34,1.56,.64,1) both;
+}
+@keyframes iconPop {
+  0%   { transform: scale(0.7); opacity: .4; }
+  100% { transform: scale(1);   opacity: 1; }
+}
 .club-item strong {
   display: block;
   font-size: .95rem;
