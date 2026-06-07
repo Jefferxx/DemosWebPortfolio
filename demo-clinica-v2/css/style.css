@@ -1402,6 +1402,9 @@ address { font-style: normal; }
   .logos-track        { animation: none; }
   .whatsapp-float     { animation: none; }
   .hero-badge::before { animation: none; }
+  .hero-float         { animation: none; }
+  .club-item          { opacity: 1; transform: none; }
+  .club-item.card-visible { animation: none; opacity: 1; transform: none; }
   *, *::before, *::after {
     transition-duration: .01ms !important;
     animation-duration:  .01ms !important;
