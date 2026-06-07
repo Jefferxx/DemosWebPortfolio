@@ -97,10 +97,13 @@
   /* ---- Club: stagger entrada tarjetas + pop de íconos ---- */
   const clubSection = document.getElementById('club');
   if (clubSection && 'IntersectionObserver' in window) {
+    /* Ocultar tarjetas ANTES del primer paint (sin flash) */
+    clubSection.classList.add('club-has-animation');
+
     const clubObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
-          clubSection.querySelectorAll('.club-item').forEach((card, i) => {
+          clubSection.querySelectorAll('.club-item').forEach(card => {
             card.classList.add('card-visible');
           });
           clubSection.querySelectorAll('.club-item-icon').forEach((icon, i) => {
