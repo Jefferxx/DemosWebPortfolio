@@ -503,38 +503,38 @@ address { font-style: normal; }
   align-items: center;
   width: 100%;
 }
-.hero-image-wrapper {
-  background: #F4F7FC; /* Gris clínico ultra claro */
-  border-radius: 24px;
-  min-height: 450px;
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+.hero-img-frame {
   position: relative;
-  border: 1px solid var(--color-border);
-}
-.hero-image-placeholder-text {
-  position: absolute;
-  color: var(--color-text-muted);
-  font-size: 1rem;
-  font-weight: 500;
-  z-index: 1;
-  text-align: center;
-}
-.hero-image {
   width: 100%;
-  height: 100%;
-  min-height: 450px;
-  object-fit: cover;
-  display: block;
-  z-index: 2;
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  box-shadow: 0 24px 64px rgba(0,14,68,.14), 0 4px 16px rgba(0,14,68,.08);
+  transform: rotate(-1.5deg);
   transition: transform var(--transition-slow);
 }
-.hero-image-wrapper:hover .hero-image {
-  transform: scale(1.03);
+.hero-img-frame:hover { transform: rotate(0deg) scale(1.01); }
+.hero-img-real {
+  width: 100%;
+  height: 460px;
+  object-fit: cover;
+  display: block;
 }
+.hero-img-badge {
+  position: absolute;
+  bottom: 1.25rem;
+  left: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  gap: .45rem;
+  background: white;
+  color: var(--color-brand-primary);
+  font-size: .8rem;
+  font-weight: 700;
+  padding: .45rem 1rem;
+  border-radius: 9999px;
+  box-shadow: 0 2px 12px rgba(0,14,68,.12);
+}
+.hero-img-badge svg { color: var(--color-brand-accent); flex-shrink: 0; }
 
 @media (max-width: 991px) {
   .hero-inner-grid {
