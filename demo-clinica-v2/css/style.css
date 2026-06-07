@@ -840,42 +840,44 @@ address { font-style: normal; }
 .club-beneficios {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  gap: 1.25rem;
+  gap: 1.5rem;
   margin-bottom: 2.5rem;
   width: 100%;
-  text-align: left;
 }
 .club-item {
   display: flex;
-  align-items: flex-start;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: 1rem;
-  background: rgba(255,255,255,.07);
-  border: 1px solid rgba(255,255,255,.14);
+  background: rgba(255,255,255,.08);
+  border: 1px solid rgba(255,255,255,.15);
   border-radius: var(--radius-lg);
-  padding: 1.25rem;
-  backdrop-filter: blur(6px);
-  -webkit-backdrop-filter: blur(6px);
-  transition: background var(--transition), border-color var(--transition);
+  padding: 2rem 1.5rem;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: background var(--transition), border-color var(--transition), transform var(--transition);
 }
 .club-item:hover {
-  background: rgba(255,255,255,.12);
-  border-color: rgba(2,156,128,.4);
+  background: rgba(255,255,255,.14);
+  border-color: rgba(2,156,128,.5);
+  transform: translateY(-4px);
 }
 .club-item-icon {
-  width: 44px;
-  height: 44px;
-  background: rgba(2,156,128,.28);
-  border-radius: 12px;
+  width: 56px;
+  height: 56px;
+  background: rgba(2,156,128,.3);
+  border-radius: 16px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: var(--color-brand-accent);
+  color: #4dd9b8;
   flex-shrink: 0;
   transition: transform var(--transition), background var(--transition);
 }
 .club-item:hover .club-item-icon {
   transform: scale(1.1);
-  background: rgba(2,156,128,.45);
+  background: rgba(2,156,128,.5);
 }
 .club-item-icon.icon-popped {
   animation: iconPop .45s cubic-bezier(.34,1.56,.64,1) both;
@@ -886,15 +888,15 @@ address { font-style: normal; }
 }
 .club-item strong {
   display: block;
-  font-size: .95rem;
+  font-size: 1rem;
   font-weight: 700;
   color: white;
-  margin-bottom: .2rem;
+  line-height: 1.3;
 }
 .club-item p {
-  font-size: .88rem;
+  font-size: .9rem;
   color: rgba(255,255,255,.72);
-  line-height: 1.5;
+  line-height: 1.6;
   margin: 0;
 }
 .club-ctas {
