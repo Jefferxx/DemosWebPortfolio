@@ -805,56 +805,91 @@ address { font-style: normal; }
 
 /* === CLUB DE BENEFICIOS === */
 .club {
-  padding-block: var(--space-xl);
-  background: linear-gradient(135deg, #E6F7F4 0%, #F0FBFA 60%, #EAF5FF 100%);
-  border-top: 1px solid rgba(2,156,128,.15);
-  border-bottom: 1px solid rgba(2,156,128,.15);
+  position: relative;
+  padding-block: clamp(5rem, 10vw, 8rem);
+  background-image: url('../images_sitio_web_actual_medicgar/banner-club-de-beneficios-familia.jpg');
+  background-size: cover;
+  background-position: center 70%;
+  background-attachment: scroll;
 }
+.club::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    160deg,
+    rgba(0, 14, 68, 0.86) 0%,
+    rgba(0, 89, 115, 0.78) 55%,
+    rgba(0, 14, 68, 0.88) 100%
+  );
+}
+.club .container { position: relative; z-index: 1; }
 .club-inner {
-  display: grid;
-  grid-template-columns: 1.15fr 0.85fr;
-  gap: clamp(2.5rem, 5vw, 5rem);
+  display: flex;
+  flex-direction: column;
   align-items: center;
+  text-align: center;
+  max-width: 820px;
+  margin-inline: auto;
+}
+.club .section-badge {
+  color: var(--color-brand-accent);
+  background: rgba(2,156,128,.2);
+}
+.club .section-title {
+  color: white;
 }
 .club .section-title em {
   font-style: italic;
-  color: var(--color-brand-primary);
+  color: var(--color-brand-accent);
 }
 .club-lead {
   font-size: 1.05rem;
-  color: var(--color-text-paragraph);
+  color: rgba(255,255,255,.82);
   line-height: 1.75;
   margin-top: .75rem;
   margin-bottom: 2rem;
-  max-width: 500px;
+  max-width: 600px;
 }
 .club-beneficios {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 1.25rem;
   margin-bottom: 2.5rem;
+  width: 100%;
+  text-align: left;
 }
 .club-item {
   display: flex;
   align-items: flex-start;
   gap: 1rem;
+  background: rgba(255,255,255,.07);
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: var(--radius-lg);
+  padding: 1.25rem;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  transition: background var(--transition), border-color var(--transition);
+}
+.club-item:hover {
+  background: rgba(255,255,255,.12);
+  border-color: rgba(2,156,128,.4);
 }
 .club-item-icon {
   width: 44px;
   height: 44px;
-  background: white;
+  background: rgba(2,156,128,.28);
   border-radius: 12px;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--color-brand-accent);
   flex-shrink: 0;
-  box-shadow: 0 2px 8px rgba(2,156,128,.12);
-  transition: transform var(--transition), box-shadow var(--transition);
+  transition: transform var(--transition), background var(--transition);
 }
 .club-item:hover .club-item-icon {
   transform: scale(1.1);
-  box-shadow: 0 4px 16px rgba(2,156,128,.22);
+  background: rgba(2,156,128,.45);
 }
 .club-item-icon.icon-popped {
   animation: iconPop .45s cubic-bezier(.34,1.56,.64,1) both;
@@ -867,12 +902,12 @@ address { font-style: normal; }
   display: block;
   font-size: .95rem;
   font-weight: 700;
-  color: var(--color-brand-dark);
+  color: white;
   margin-bottom: .2rem;
 }
 .club-item p {
-  font-size: .9rem;
-  color: var(--color-text-paragraph);
+  font-size: .88rem;
+  color: rgba(255,255,255,.72);
   line-height: 1.5;
   margin: 0;
 }
@@ -880,46 +915,13 @@ address { font-style: normal; }
   display: flex;
   flex-wrap: wrap;
   gap: var(--space-sm);
+  justify-content: center;
 }
-.club-imagen { display: flex; justify-content: center; }
-.club-img-wrap {
-  position: relative;
-  width: 100%;
-  max-width: 420px;
-}
-.club-img {
-  width: 100%;
-  height: 520px;
-  object-fit: cover;
-  border-radius: var(--radius-xl);
-  box-shadow: 0 24px 56px rgba(0,14,68,.14), 0 4px 16px rgba(0,14,68,.07);
-  display: block;
-}
-.club-logo-badge {
-  position: absolute;
-  bottom: 1.25rem;
-  right: 1.25rem;
-  background: white;
-  padding: .6rem 1rem;
-  border-radius: var(--radius);
-  box-shadow: 0 4px 16px rgba(0,14,68,.12);
-}
-.club-logo-badge img {
-  height: 36px;
-  width: auto;
-  object-fit: contain;
-  display: block;
-}
-@media (max-width: 991px) {
-  .club-inner {
-    grid-template-columns: 1fr;
-    gap: var(--space-lg);
-  }
-  .club-imagen { order: -1; }
-  .club-img { height: 320px; max-width: 100%; }
+@media (max-width: 640px) {
+  .club-beneficios { grid-template-columns: 1fr; }
 }
 @media (max-width: 480px) {
-  .club-ctas { flex-direction: column; }
+  .club-ctas { flex-direction: column; width: 100%; }
   .club-ctas .btn { width: 100%; justify-content: center; }
 }
 
