@@ -252,6 +252,19 @@ address { font-style: normal; }
   letter-spacing: .01em;
 }
 .nav-menu a:hover { color: var(--color-brand-primary); }
+.nav-menu a.nav-active {
+  color: var(--color-brand-primary);
+  position: relative;
+}
+.nav-menu a.nav-active::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0; right: 0;
+  height: 2px;
+  background: var(--color-brand-primary);
+  border-radius: 2px;
+}
 
 /* --- DROPDOWNS (CSS PURO) --- */
 .has-dropdown {

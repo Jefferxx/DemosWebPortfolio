@@ -94,6 +94,23 @@
     counterObs.observe(trustBar);
   }
 
+  /* ---- ScrollSpy: link activo en navbar según sección visible ---- */
+  const spySections = document.querySelectorAll('section[id]');
+  const spyLinks    = document.querySelectorAll('.nav-menu a[href^="#"]');
+
+  if (spySections.length && spyLinks.length && 'IntersectionObserver' in window) {
+    const spyObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          spyLinks.forEach(l => l.classList.remove('nav-active'));
+          const active = document.querySelector(`.nav-menu a[href="#${entry.target.id}"]`);
+          if (active) active.classList.add('nav-active');
+        }
+      });
+    }, { threshold: 0.35, rootMargin: '-72px 0px 0px 0px' });
+    spySections.forEach(s => spyObs.observe(s));
+  }
+
   /* ---- Formulario: redirect a WhatsApp ---- */
   const form = document.getElementById('citaForm');
   if (form) {
