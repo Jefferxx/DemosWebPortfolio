@@ -213,6 +213,46 @@ address { font-style: normal; }
 }
 .btn-full { width: 100%; justify-content: center; }
 
+/* === STICKY CTA BAR === */
+.sticky-cta {
+  position: fixed;
+  bottom: 5.5rem;
+  left: 50%;
+  transform: translateX(-50%) translateY(200%);
+  z-index: 800;
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: var(--color-brand-dark);
+  color: white;
+  padding: .7rem 1.25rem .7rem 1.5rem;
+  border-radius: 9999px;
+  box-shadow: 0 8px 32px rgba(0,14,68,.25);
+  transition: transform .35s cubic-bezier(.4,0,.2,1), opacity .3s ease;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sticky-cta.is-visible {
+  transform: translateX(-50%) translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+}
+.sticky-cta-text {
+  font-size: .88rem;
+  font-weight: 500;
+  color: rgba(255,255,255,.85);
+}
+.btn-sm {
+  padding: .5rem 1.25rem;
+  font-size: .83rem;
+  min-height: 36px;
+}
+@media (max-width: 480px) {
+  .sticky-cta { bottom: 5rem; }
+  .sticky-cta-text { display: none; }
+}
+
 /* === NAVBAR === */
 .navbar {
   position: fixed;

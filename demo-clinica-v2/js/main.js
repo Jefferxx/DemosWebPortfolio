@@ -94,6 +94,38 @@
     counterObs.observe(trustBar);
   }
 
+  /* ---- Sticky CTA: aparece tras pasar el hero, desaparece en #cita ---- */
+  const stickyCta  = document.getElementById('stickyCta');
+  const heroSec    = document.getElementById('hero');
+  const citaSec    = document.getElementById('cita');
+
+  if (stickyCta && heroSec && 'IntersectionObserver' in window) {
+    const showObs = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) {
+          stickyCta.classList.add('is-visible');
+          stickyCta.setAttribute('aria-hidden', 'false');
+        } else {
+          stickyCta.classList.remove('is-visible');
+          stickyCta.setAttribute('aria-hidden', 'true');
+        }
+      });
+    }, { threshold: 0.05 });
+    showObs.observe(heroSec);
+
+    if (citaSec) {
+      const hideObs = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            stickyCta.classList.remove('is-visible');
+            stickyCta.setAttribute('aria-hidden', 'true');
+          }
+        });
+      }, { threshold: 0.1 });
+      hideObs.observe(citaSec);
+    }
+  }
+
   /* ---- ScrollSpy: link activo en navbar según sección visible ---- */
   const spySections = document.querySelectorAll('section[id]');
   const spyLinks    = document.querySelectorAll('.nav-menu a[href^="#"]');
