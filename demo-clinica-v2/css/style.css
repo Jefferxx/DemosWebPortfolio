@@ -807,25 +807,9 @@ address { font-style: normal; }
 
 /* === CLUB DE BENEFICIOS === */
 .club {
-  position: relative;
   padding-block: clamp(5rem, 10vw, 8rem);
-  background-image: url('../images_sitio_web_actual_medicgar/banner-club-de-beneficios-familia.jpg');
-  background-size: cover;
-  background-position: center 70%;
-  background-attachment: scroll;
+  background: linear-gradient(145deg, var(--color-brand-dark) 0%, #003d5c 60%, var(--color-brand-primary) 100%);
 }
-.club::before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(0, 14, 68, 0.86) 0%,
-    rgba(0, 89, 115, 0.78) 55%,
-    rgba(0, 14, 68, 0.88) 100%
-  );
-}
-.club .container { position: relative; z-index: 1; }
 .club-inner {
   display: flex;
   flex-direction: column;
