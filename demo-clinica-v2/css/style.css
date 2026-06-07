@@ -966,8 +966,7 @@ address { font-style: normal; }
   .club-item { padding: 1.5rem 1.25rem; }
 }
 @media (max-width: 480px) {
-  .club-ctas { flex-direction: column; width: 100%; }
-  .club-ctas .btn { width: 100%; justify-content: center; }
+  .club-cta-block .btn { width: 100%; justify-content: center; }
 }
 
 /* === COBERTURA GEOGRÁFICA === */
@@ -1363,8 +1362,7 @@ address { font-style: normal; }
   .logos-track        { animation: none; }
   .whatsapp-float     { animation: none; }
   .hero-badge::before { animation: none; }
-  .hero-float         { animation: none; }
-  .club-item          { opacity: 1; transform: none; }
+  .club-has-animation .club-item { opacity: 1; transform: none; }
   .club-item.card-visible { animation: none; opacity: 1; transform: none; }
   *, *::before, *::after {
     transition-duration: .01ms !important;
