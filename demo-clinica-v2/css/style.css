@@ -672,14 +672,6 @@ address { font-style: normal; }
   letter-spacing: normal;
   line-height: 1.4;
 }
-.trust-cities {
-  font-size: 0.78rem;
-  color: var(--color-text-paragraph);
-  margin-top: 8px;
-  line-height: 1.4;
-  max-width: 200px;
-  display: block;
-}
 @media (max-width: 768px) {
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
