@@ -168,6 +168,26 @@
     spySections.forEach(s => spyObs.observe(s));
   }
 
+  /* ---- FAQ: accordion toggle ---- */
+  document.querySelectorAll('.faq-question').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const isOpen = btn.getAttribute('aria-expanded') === 'true';
+      const answer = document.getElementById(btn.getAttribute('aria-controls'));
+
+      /* Cerrar todos los demás */
+      document.querySelectorAll('.faq-question[aria-expanded="true"]').forEach(other => {
+        if (other !== btn) {
+          other.setAttribute('aria-expanded', 'false');
+          document.getElementById(other.getAttribute('aria-controls'))?.classList.remove('is-open');
+        }
+      });
+
+      /* Toggle el actual */
+      btn.setAttribute('aria-expanded', String(!isOpen));
+      answer?.classList.toggle('is-open', !isOpen);
+    });
+  });
+
   /* ---- Formulario: redirect a WhatsApp ---- */
   const form = document.getElementById('citaForm');
   if (form) {
