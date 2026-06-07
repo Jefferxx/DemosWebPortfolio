@@ -903,6 +903,11 @@ address { font-style: normal; }
   margin-bottom: 2.5rem;
   width: 100%;
 }
+/* Animación de entrada stagger para tarjetas */
+@keyframes cardSlideUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
 .club-item {
   display: flex;
   flex-direction: column;
@@ -910,33 +915,44 @@ address { font-style: normal; }
   text-align: center;
   gap: 1rem;
   background: rgba(255,255,255,.08);
-  border: 1px solid rgba(255,255,255,.15);
+  border: 1px solid rgba(255,255,255,.13);
+  border-top: 3px solid rgba(2,156,128,.6);
   border-radius: var(--radius-lg);
   padding: 2rem 1.5rem;
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
-  transition: background var(--transition), border-color var(--transition), transform var(--transition);
+  transition: background var(--transition), box-shadow var(--transition), transform var(--transition);
+  opacity: 0;
+  transform: translateY(28px);
 }
+/* La clase .card-visible se añade via JS al entrar en viewport */
+.club-item.card-visible {
+  animation: cardSlideUp .55s cubic-bezier(.22,1,.36,1) forwards;
+}
+.club-item.card-visible:nth-child(1) { animation-delay: 0ms; }
+.club-item.card-visible:nth-child(2) { animation-delay: 110ms; }
+.club-item.card-visible:nth-child(3) { animation-delay: 220ms; }
+.club-item.card-visible:nth-child(4) { animation-delay: 330ms; }
 .club-item:hover {
   background: rgba(255,255,255,.14);
-  border-color: rgba(2,156,128,.5);
-  transform: translateY(-4px);
+  box-shadow: 0 0 0 1px rgba(2,156,128,.4), 0 16px 48px rgba(0,14,68,.28);
+  transform: translateY(-6px);
 }
 .club-item-icon {
   width: 56px;
   height: 56px;
-  background: rgba(2,156,128,.3);
-  border-radius: 16px;
+  background: rgba(2,156,128,.28);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #4dd9b8;
+  color: #5ee8c5;
   flex-shrink: 0;
-  transition: transform var(--transition), background var(--transition);
+  transition: transform .35s cubic-bezier(.34,1.56,.64,1), background var(--transition);
 }
 .club-item:hover .club-item-icon {
-  transform: scale(1.1);
-  background: rgba(2,156,128,.5);
+  transform: scale(1.18) rotate(-6deg);
+  background: rgba(2,156,128,.48);
 }
 .club-item-icon.icon-popped {
   animation: iconPop .45s cubic-bezier(.34,1.56,.64,1) both;
@@ -947,14 +963,15 @@ address { font-style: normal; }
 }
 .club-item strong {
   display: block;
-  font-size: 1rem;
+  font-family: var(--font-display);
+  font-size: 1.1rem;
   font-weight: 700;
   color: white;
-  line-height: 1.3;
+  line-height: 1.25;
 }
 .club-item p {
   font-size: .9rem;
-  color: rgba(255,255,255,.72);
+  color: rgba(255,255,255,.7);
   line-height: 1.6;
   margin: 0;
 }

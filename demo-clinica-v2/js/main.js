@@ -94,22 +94,25 @@
     counterObs.observe(trustBar);
   }
 
-  /* ---- Club micro-interacción: pop de íconos al entrar sección al viewport ---- */
+  /* ---- Club: stagger entrada tarjetas + pop de íconos ---- */
   const clubSection = document.getElementById('club');
   if (clubSection && 'IntersectionObserver' in window) {
     const clubObs = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         if (entry.isIntersecting) {
+          clubSection.querySelectorAll('.club-item').forEach((card, i) => {
+            card.classList.add('card-visible');
+          });
           clubSection.querySelectorAll('.club-item-icon').forEach((icon, i) => {
             setTimeout(() => {
               icon.style.setProperty('--icon-pop', '1');
               icon.classList.add('icon-popped');
-            }, i * 120);
+            }, i * 120 + 200);
           });
           clubObs.disconnect();
         }
       });
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
     clubObs.observe(clubSection);
   }
 
