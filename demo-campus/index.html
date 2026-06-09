@@ -34,7 +34,24 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
 .nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 20px;border-radius:var(--r-full);font-family:'Outfit',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:7px;transition:background .2s,box-shadow .2s,transform .1s;white-space:nowrap}
 .nav-cta:hover{background:var(--amber);box-shadow:var(--glow)}
 .nav-cta:active{transform:scale(.97)}
-@media(max-width:1024px){nav{padding:0 24px}.nav-links{display:none}}
+/* HERO */
+.hero{position:relative;min-height:100vh;display:flex;align-items:center;background:var(--navy);overflow:hidden;padding-top:72px}
+.hero-img{position:absolute;right:0;top:0;width:58%;height:100%;object-fit:cover;object-position:center;filter:brightness(.8)}
+.hero-grad{position:absolute;inset:0;background:linear-gradient(90deg,var(--navy) 44%,rgba(6,11,30,.55) 72%,transparent 100%)}
+.hero-content{position:relative;z-index:2;padding:0 80px;max-width:680px;display:flex;flex-direction:column;gap:0}
+.hero-eyebrow{font-family:'Pacifico',cursive;color:var(--gold);font-size:1.65rem;margin-bottom:4px;opacity:0;animation:up .6s ease .2s forwards}
+.hero-h1{font-family:'Bebas Neue',sans-serif;font-size:clamp(4.5rem,10vw,9.5rem);line-height:.88;letter-spacing:.02em;margin-bottom:28px;opacity:0;animation:up .7s ease .4s forwards}
+.hero-h1 span{color:var(--gold)}
+.hero-note{font-family:'Pacifico',cursive;color:var(--gold);font-size:1.1rem;margin-bottom:20px;opacity:0;animation:up .5s ease .55s forwards}
+.hero-sub{color:var(--txt-sec);font-size:1rem;line-height:1.7;max-width:400px;margin-bottom:32px;opacity:0;animation:up .7s ease .6s forwards}
+.hero-btns{display:flex;gap:14px;flex-wrap:wrap;opacity:0;animation:up .7s ease .8s forwards}
+.btn-gold{background:var(--gold);color:var(--navy);border:none;padding:13px 30px;border-radius:var(--r-full);font-family:'Outfit',sans-serif;font-weight:700;font-size:.95rem;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;gap:8px;transition:background .2s,box-shadow .2s,transform .1s}
+.btn-gold:hover{background:var(--amber);box-shadow:var(--glow)}
+.btn-gold:active{transform:scale(.97)}
+.btn-ghost{color:#fff;border:1.5px solid rgba(255,255,255,.28);padding:13px 30px;border-radius:var(--r-full);font-family:'Outfit',sans-serif;font-weight:600;font-size:.95rem;cursor:pointer;text-decoration:none;background:transparent;transition:border-color .2s,background .2s}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(255,184,0,.08)}
+@media(max-width:1024px){nav{padding:0 24px}.nav-links{display:none}.hero-content{padding:0 40px}}
+@media(max-width:768px){.hero-img{opacity:.3;width:100%}.hero-grad{background:linear-gradient(to bottom,transparent 10%,var(--navy) 60%)}.hero-content{padding:0 24px;max-width:100%}}
 </style>
 </head>
 <body>
@@ -52,6 +69,22 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
     Pedir por WhatsApp
   </a>
 </nav>
+
+<!-- HERO -->
+<section class="hero" id="inicio">
+  <img src="KitDiseno/portada_menu_comida.jpg" alt="" class="hero-img" aria-hidden="true">
+  <div class="hero-grad"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow">Damn Good</p>
+    <h1 class="hero-h1">CAMPUS<br><span>COFFEE<br>&amp; BEER</span></h1>
+    <p class="hero-note">El mejor cafe y la mejor cerveza de la ciudad</p>
+    <p class="hero-sub">Desde el primer cafe de la manana hasta la ultima cerveza de la noche — Campus es tu lugar todos los dias.</p>
+    <div class="hero-btns">
+      <a href="#menu" class="btn-gold">Ver el Menu</a>
+      <a href="#contacto" class="btn-ghost">Encuentranos</a>
+    </div>
+  </div>
+</section>
 
 </body>
 </html>
