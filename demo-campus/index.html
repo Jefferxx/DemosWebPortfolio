@@ -24,9 +24,34 @@ body{font-family:'Outfit',sans-serif;background:var(--navy);color:#fff;overflow-
 .reveal{opacity:0;transform:translateY(28px);transition:opacity .6s ease,transform .6s ease}
 .reveal.revealed{opacity:1;transform:none}
 .eyebrow{font-family:'Pacifico',cursive;color:var(--amber);font-size:1.2rem;margin-bottom:12px;display:block}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:var(--navy);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 48px;height:72px;transition:box-shadow .3s}
+nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
+.nav-logo img{height:46px;width:auto}
+.nav-links{display:flex;gap:32px;list-style:none}
+.nav-links a{color:var(--txt-sec);text-decoration:none;font-size:.82rem;font-weight:600;letter-spacing:.07em;text-transform:uppercase;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+.nav-cta{background:var(--gold);color:var(--navy);border:none;padding:10px 20px;border-radius:var(--r-full);font-family:'Outfit',sans-serif;font-weight:700;font-size:.82rem;cursor:pointer;text-decoration:none;display:flex;align-items:center;gap:7px;transition:background .2s,box-shadow .2s,transform .1s;white-space:nowrap}
+.nav-cta:hover{background:var(--amber);box-shadow:var(--glow)}
+.nav-cta:active{transform:scale(.97)}
+@media(max-width:1024px){nav{padding:0 24px}.nav-links{display:none}}
 </style>
 </head>
 <body>
-<!-- Campus Coffee & Beer — landing page en construccion -->
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#inicio" class="nav-logo"><img src="KitDiseno/logo_campus.png" alt="Campus Coffee &amp; Beer"></a>
+  <ul class="nav-links">
+    <li><a href="#inicio">Inicio</a></li>
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#horarios">Horarios</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  <a href="https://wa.me/593XXXXXXXXX?text=Hola%20Campus!" class="nav-cta" target="_blank">
+    Pedir por WhatsApp
+  </a>
+</nav>
+
 </body>
 </html>
