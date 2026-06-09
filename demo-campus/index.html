@@ -52,6 +52,18 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
 .btn-ghost:hover{border-color:var(--gold);background:rgba(255,184,0,.08)}
 @media(max-width:1024px){nav{padding:0 24px}.nav-links{display:none}.hero-content{padding:0 40px}}
 @media(max-width:768px){.hero-img{opacity:.3;width:100%}.hero-grad{background:linear-gradient(to bottom,transparent 10%,var(--navy) 60%)}.hero-content{padding:0 24px;max-width:100%}}
+
+/* WELCOME */
+.s-welcome{background:var(--cream);color:var(--navy);padding:96px 80px;text-align:center}
+.s-welcome h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,5vw,4rem);letter-spacing:.05em;margin-bottom:24px}
+.s-welcome>p{font-size:1.05rem;line-height:1.75;max-width:620px;margin:0 auto 56px;color:#334155}
+.feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:880px;margin:0 auto}
+.feat-card{background:#fff;border-radius:var(--r-lg);padding:36px 24px;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:transform .25s,box-shadow .25s,border-color .25s;border:2px solid transparent;cursor:default;text-align:center}
+.feat-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(6,11,30,.13);border-color:rgba(255,184,0,.3)}
+.feat-icon{width:60px;height:60px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.6rem}
+.feat-card h3{font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
+.feat-card p{font-size:.875rem;color:#64748B;line-height:1.6;margin:0}
+@media(max-width:768px){.feat-grid{grid-template-columns:1fr;max-width:340px}}
 </style>
 </head>
 <body>
@@ -86,5 +98,31 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
   </div>
 </section>
 
+
+<!-- WELCOME -->
+<section class="s-welcome reveal">
+  <span class="eyebrow">El rincon que buscabas</span>
+  <h2>BIENVENIDOS A CAMPUS</h2>
+  <p>Un lugar donde el tiempo se detiene y cada momento sabe diferente. Empezamos el dia con el mejor cafe y los desayunos mas completos, y cuando cae la noche nos transformamos en el pub que mas extranabas.</p>
+  <div class="feat-grid">
+    <div class="feat-card">
+      <div class="feat-icon">☕</div>
+      <h3>Cafeteria</h3>
+      <p>Cafe artesanal, desayunos completos y meriendas para empezar el dia con el pie derecho.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🍔</div>
+      <h3>Comidas</h3>
+      <p>Almuerzos del dia, hamburguesas, alitas y platos especiales con ingredientes frescos.</p>
+    </div>
+    <div class="feat-card">
+      <div class="feat-icon">🍺</div>
+      <h3>Bebidas</h3>
+      <p>Cervezas, cocteles, granizados y bebidas para todos los gustos, a toda hora.</p>
+    </div>
+  </div>
+</section>
+
 </body>
 </html>
+<!-- will be replaced by proper append -->
