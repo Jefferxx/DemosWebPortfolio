@@ -60,7 +60,10 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
 .feat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:880px;margin:0 auto}
 .feat-card{background:#fff;border-radius:var(--r-lg);padding:36px 24px;box-shadow:0 2px 16px rgba(0,0,0,.07);transition:transform .25s,box-shadow .25s,border-color .25s;border:2px solid transparent;cursor:default;text-align:center}
 .feat-card:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(6,11,30,.13);border-color:rgba(255,184,0,.3)}
-.feat-icon{width:60px;height:60px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:1.6rem}
+.feat-icon-wrap{width:60px;height:60px;background:var(--navy);border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;transition:background .25s,transform .25s}
+.feat-card:hover .feat-icon-wrap{background:var(--gold);transform:scale(1.1)}
+.feat-icon-wrap svg{transition:stroke .25s}
+.feat-card:hover .feat-icon-wrap svg{stroke:var(--navy)}
 .feat-card h3{font-weight:700;font-size:.85rem;letter-spacing:.08em;text-transform:uppercase;color:var(--navy);margin-bottom:10px}
 .feat-card p{font-size:.875rem;color:#64748B;line-height:1.6;margin:0}
 @media(max-width:768px){.feat-grid{grid-template-columns:1fr;max-width:340px}}
@@ -105,15 +108,15 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
 .card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
 .card:hover img{transform:scale(1.06)}
 .card-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
-.ov-gold{background:linear-gradient(to top,rgba(140,80,0,.85) 0%,rgba(180,110,0,.5) 45%,transparent 75%)}
-.ov-navy{background:linear-gradient(to top,rgba(3,7,20,.9) 0%,rgba(6,11,30,.5) 45%,transparent 75%)}
-.ov-green{background:linear-gradient(to top,rgba(14,60,32,.85) 0%,rgba(20,83,45,.5) 45%,transparent 75%)}
-.ov-amber{background:linear-gradient(to top,rgba(120,50,0,.85) 0%,rgba(160,75,0,.5) 45%,transparent 75%)}
-.ov-teal{background:linear-gradient(to top,rgba(8,80,74,.85) 0%,rgba(15,118,110,.5) 45%,transparent 75%)}
-.card-name{font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:3px;line-height:1.2}
+.ov-gold{background:linear-gradient(to top,rgba(180,110,0,.97) 0%,rgba(202,138,4,.65) 45%,transparent 75%)}
+.ov-navy{background:linear-gradient(to top,rgba(3,7,20,.98) 0%,rgba(6,11,30,.65) 45%,transparent 75%)}
+.ov-green{background:linear-gradient(to top,rgba(14,60,32,.97) 0%,rgba(20,83,45,.6) 45%,transparent 75%)}
+.ov-amber{background:linear-gradient(to top,rgba(140,55,5,.97) 0%,rgba(180,83,9,.6) 45%,transparent 75%)}
+.ov-teal{background:linear-gradient(to top,rgba(8,80,74,.97) 0%,rgba(15,118,110,.6) 45%,transparent 75%)}
+.card-name{font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:3px;line-height:1.2;text-shadow:0 2px 8px rgba(0,0,0,.9)}
 .card:first-child .card-name{font-size:1.35rem}
-.card-desc{font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.4;margin-bottom:6px}
-.card-price{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#FFE066;letter-spacing:.04em}
+.card-desc{font-size:.78rem;color:rgba(255,255,255,.9);line-height:1.4;margin-bottom:6px;text-shadow:0 1px 4px rgba(0,0,0,.8)}
+.card-price{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#FFE066;letter-spacing:.04em;text-shadow:0 2px 6px rgba(0,0,0,.7)}
 .card:first-child .card-price{font-size:1.9rem}
 .menu-foot{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto}
 .menu-note{font-family:'Pacifico',cursive;color:var(--amber);font-size:1.05rem}
@@ -167,9 +170,22 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
 .wa-fab:hover{background:#20c05a}
 @media(max-width:1024px){.s-contact{padding:72px 40px}footer{padding:40px 40px 24px}}
 @media(max-width:768px){.contact-grid{grid-template-columns:1fr}.map-wrap{height:260px}footer{padding:36px 24px 20px}.ft-top{grid-template-columns:1fr;text-align:center}.ft-social{justify-content:center}.ft-bot{flex-direction:column;gap:14px;text-align:center}.s-contact{padding:64px 24px}}
+
+/* LIGHTBOX */
+.lbox{display:none;position:fixed;inset:0;background:rgba(0,0,0,.92);z-index:200;align-items:center;justify-content:center;cursor:zoom-out;padding:16px}
+.lbox.open{display:flex}
+.lbox img{max-width:92vw;max-height:90vh;object-fit:contain;border-radius:var(--r-md);cursor:default;box-shadow:0 8px 40px rgba(0,0,0,.6)}
+.lbox-close{position:absolute;top:18px;right:22px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);color:#fff;width:42px;height:42px;border-radius:50%;font-size:1.1rem;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .2s;z-index:201}
+.lbox-close:hover{background:rgba(255,255,255,.22)}
 </style>
 </head>
 <body>
+
+<!-- LIGHTBOX MODAL -->
+<div id="lbox" class="lbox" onclick="closeLbox()">
+  <button class="lbox-close" onclick="event.stopPropagation();closeLbox()">&#x2715;</button>
+  <img id="lbox-img" src="" alt="Menu Campus" onclick="event.stopPropagation()">
+</div>
 
 <!-- NAV -->
 <nav id="nav">
@@ -232,15 +248,15 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
   <div class="cats-bg"></div>
   <div class="cats-veil"></div>
   <div class="cats-wrap">
-    <a class="cat-item" href="#menu">
+    <a class="cat-item" data-tab="cafe" href="#menu" onclick="activateTab('cafe')">
       <div class="cat-circle"><img src="KitDiseno/portada_cafeteria.jpg" alt="Cafeteria y Desayunos"></div>
       <span class="cat-label">Cafeteria &amp; Desayunos</span>
     </a>
-    <a class="cat-item" href="#menu">
+    <a class="cat-item" data-tab="hambur" href="#menu" onclick="activateTab('hambur')">
       <div class="cat-circle"><img src="KitDiseno/portada_menu_comida.jpg" alt="Almuerzos y Comidas"></div>
       <span class="cat-label">Almuerzos &amp; Comidas</span>
     </a>
-    <a class="cat-item" href="#menu">
+    <a class="cat-item" data-tab="bebidas" href="#menu" onclick="activateTab('bebidas')">
       <div class="cat-circle"><img src="KitDiseno/portada_bebidas.jpg" alt="Cocteles y Bebidas"></div>
       <span class="cat-label">Cocteles &amp; Bebidas</span>
     </a>
@@ -276,7 +292,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/menu_desayunos.jpg" alt="Ensenada"><div class="card-ov ov-green"><span class="card-name">Ensenada</span><p class="card-desc">El desayuno de los que saben</p><span class="card-price">$2.85</span></div></div>
       <div class="card"><img src="KitDiseno/portada_cafeteria.jpg" alt="Ranchero"><div class="card-ov ov-teal"><span class="card-name">Ranchero</span><p class="card-desc">Estilo ranchero</p><span class="card-price">$2.99</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Y hay mucho mas...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_desayunos.jpg')">Ver Menu Completo</button></div>
+    <div class="menu-foot"><span class="menu-note">Y hay mucho mas...</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_desayunos.jpg')">Ver Menu Completo</button></div>
   </div>
   <div class="panel" id="p-hambur">
     <div class="mosaic">
@@ -286,7 +302,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="La Humilde"><div class="card-ov ov-green"><span class="card-name">La Humilde</span><p class="card-desc">Pequena pero perfecta</p><span class="card-price">$2.60</span></div></div>
       <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="Dog Campus"><div class="card-ov ov-gold"><span class="card-name">Dog Campus</span><p class="card-desc">El hot dog definitivo</p><span class="card-price">$1.60</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Y tambien papas fritas...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_hamburguesas_hot_dogs.jpg')">Ver Menu Completo</button></div>
+    <div class="menu-foot"><span class="menu-note">Y tambien papas fritas...</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_hamburguesas_hot_dogs.jpg')">Ver Menu Completo</button></div>
   </div>
   <div class="panel" id="p-alitas">
     <div class="mosaic">
@@ -296,7 +312,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/menu_ensaladas_nachos.jpg" alt="Ensalada"><div class="card-ov ov-green"><span class="card-name">Ensalada Campus</span><p class="card-desc">Fresca y colorida</p><span class="card-price">desde $3.50</span></div></div>
       <div class="card"><img src="KitDiseno/menu_papas_fritas.jpg" alt="Papas"><div class="card-ov ov-teal"><span class="card-name">Papas Especiales</span><p class="card-desc">Crujientes con salsas</p><span class="card-price">desde $2.50</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Pedimos algo para compartir?</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_alitas_costillas.jpg')">Ver Menu Completo</button></div>
+    <div class="menu-foot"><span class="menu-note">Pedimos algo para compartir?</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_alitas_costillas.jpg')">Ver Menu Completo</button></div>
   </div>
   <div class="panel" id="p-bebidas">
     <div class="mosaic">
@@ -306,7 +322,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/menu_bebidas_sin_alcohol.jpg" alt="Sin alcohol"><div class="card-ov ov-green"><span class="card-name">Sin Alcohol</span><p class="card-desc">Jugos y limonadas</p><span class="card-price">desde $1.00</span></div></div>
       <div class="card"><img src="KitDiseno/menu_bebidas_con_alcohol.jpg" alt="Licores"><div class="card-ov ov-navy"><span class="card-name">Licores y Shots</span><p class="card-desc">Para las noches campus</p><span class="card-price">desde $2.00</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Salud, Campus te espera...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_bebidas_cocteles.jpg')">Ver Carta Completa</button></div>
+    <div class="menu-foot"><span class="menu-note">Salud, Campus te espera...</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_bebidas_cocteles.jpg')">Ver Carta Completa</button></div>
   </div>
   <div class="panel" id="p-cafe">
     <div class="mosaic">
@@ -316,7 +332,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/menu_cafeteria.jpg" alt="Frappes"><div class="card-ov ov-teal"><span class="card-name">Frappes</span><p class="card-desc">Frios y cremosos</p><span class="card-price">desde $2.50</span></div></div>
       <div class="card"><img src="KitDiseno/portada_cafeteria.jpg" alt="Meriendas"><div class="card-ov ov-green"><span class="card-name">Meriendas</span><p class="card-desc">Pan y snacks con el cafe</p><span class="card-price">desde $0.80</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Ven y prueba nuestro cafe...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_cafeteria.jpg')">Ver Menu Completo</button></div>
+    <div class="menu-foot"><span class="menu-note">Ven y prueba nuestro cafe...</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_cafeteria.jpg')">Ver Menu Completo</button></div>
   </div>
   <div class="panel" id="p-especiales">
     <div class="mosaic">
@@ -326,7 +342,7 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
       <div class="card"><img src="KitDiseno/portada_menu_comida.jpg" alt="Mixto"><div class="card-ov ov-green"><span class="card-name">Mixto Campus</span><p class="card-desc">Un poco de todo lo mejor</p><span class="card-price">desde $8.00</span></div></div>
       <div class="card"><img src="KitDiseno/menu_platos_especiales.jpg" alt="Del Dia"><div class="card-ov ov-teal"><span class="card-name">Especial del Dia</span><p class="card-desc">Pregunta siempre por el del dia</p><span class="card-price">Consultar</span></div></div>
     </div>
-    <div class="menu-foot"><span class="menu-note">Siempre hay algo especial...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_platos_especiales.jpg')">Ver Carta Completa</button></div>
+    <div class="menu-foot"><span class="menu-note">Siempre hay algo especial...</span><button class="btn-dark" onclick="openLbox('KitDiseno/menu_platos_especiales.jpg')">Ver Carta Completa</button></div>
   </div>
 </section>
 
@@ -449,6 +465,27 @@ const obs=new IntersectionObserver(entries=>{
   entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('revealed')});
 },{threshold:.08});
 document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));
+
+function activateTab(tab){
+  setTimeout(()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.querySelectorAll('.panel').forEach(p=>p.classList.remove('active'));
+    const btn=document.querySelector(`.tab-btn[data-tab="${tab}"]`);
+    if(btn) btn.classList.add('active');
+    const panel=document.getElementById('p-'+tab);
+    if(panel) panel.classList.add('active');
+  },500);
+}
+function openLbox(src){
+  document.getElementById('lbox-img').src=src;
+  document.getElementById('lbox').classList.add('open');
+  document.body.style.overflow='hidden';
+}
+function closeLbox(){
+  document.getElementById('lbox').classList.remove('open');
+  document.body.style.overflow='';
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLbox()});
 </script>
 
 </body>
