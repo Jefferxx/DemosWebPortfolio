@@ -97,6 +97,29 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
 .panel{display:none}
 .panel.active{display:block;animation:up .35s ease forwards}
 @media(max-width:768px){.s-menu{padding:64px 24px}.tabs{gap:6px}.tab-btn{padding:8px 14px;font-size:.76rem}}
+
+/* MOSAIC GRID */
+.mosaic{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:280px 280px;gap:10px;max-width:1080px;margin:0 auto 40px}
+.mosaic .card:first-child{grid-row:span 2}
+.card{position:relative;border-radius:var(--r-md);overflow:hidden;cursor:pointer}
+.card img{width:100%;height:100%;object-fit:cover;transition:transform .4s}
+.card:hover img{transform:scale(1.06)}
+.card-ov{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:20px}
+.ov-gold{background:linear-gradient(to top,rgba(140,80,0,.85) 0%,rgba(180,110,0,.5) 45%,transparent 75%)}
+.ov-navy{background:linear-gradient(to top,rgba(3,7,20,.9) 0%,rgba(6,11,30,.5) 45%,transparent 75%)}
+.ov-green{background:linear-gradient(to top,rgba(14,60,32,.85) 0%,rgba(20,83,45,.5) 45%,transparent 75%)}
+.ov-amber{background:linear-gradient(to top,rgba(120,50,0,.85) 0%,rgba(160,75,0,.5) 45%,transparent 75%)}
+.ov-teal{background:linear-gradient(to top,rgba(8,80,74,.85) 0%,rgba(15,118,110,.5) 45%,transparent 75%)}
+.card-name{font-weight:700;font-size:1.05rem;color:#fff;margin-bottom:3px;line-height:1.2}
+.card:first-child .card-name{font-size:1.35rem}
+.card-desc{font-size:.78rem;color:rgba(255,255,255,.85);line-height:1.4;margin-bottom:6px}
+.card-price{font-family:'Bebas Neue',sans-serif;font-size:1.5rem;color:#FFE066;letter-spacing:.04em}
+.card:first-child .card-price{font-size:1.9rem}
+.menu-foot{display:flex;align-items:center;justify-content:space-between;max-width:1080px;margin:0 auto}
+.menu-note{font-family:'Pacifico',cursive;color:var(--amber);font-size:1.05rem}
+.btn-dark{background:var(--navy);color:#fff;border:none;padding:13px 26px;border-radius:var(--r-sm);font-family:'Outfit',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.06em;text-transform:uppercase;cursor:pointer;text-decoration:none;transition:background .2s}
+.btn-dark:hover{background:#0a1020}
+@media(max-width:768px){.mosaic{grid-template-columns:1fr 1fr;grid-template-rows:auto}.mosaic .card:first-child{grid-row:span 1}.mosaic .card{height:190px}}
 </style>
 </head>
 <body>
@@ -198,12 +221,66 @@ nav.scrolled{box-shadow:0 4px 24px rgba(0,0,0,.7)}
     <button class="tab-btn" data-tab="cafe">Cafeteria</button>
     <button class="tab-btn" data-tab="especiales">Platos Especiales</button>
   </div>
-  <div class="panel active" id="p-desayunos"><p style="text-align:center;padding:48px;color:#666">Contenido desayunos</p></div>
-  <div class="panel" id="p-hambur"><p style="text-align:center;padding:48px;color:#666">Contenido hamburguesas</p></div>
-  <div class="panel" id="p-alitas"><p style="text-align:center;padding:48px;color:#666">Contenido alitas</p></div>
-  <div class="panel" id="p-bebidas"><p style="text-align:center;padding:48px;color:#666">Contenido bebidas</p></div>
-  <div class="panel" id="p-cafe"><p style="text-align:center;padding:48px;color:#666">Contenido cafeteria</p></div>
-  <div class="panel" id="p-especiales"><p style="text-align:center;padding:48px;color:#666">Contenido especiales</p></div>
+  <div class="panel active" id="p-desayunos">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/menu_desayunos.jpg" alt="Desayuno Campus"><div class="card-ov ov-gold"><span class="card-name">Desayuno Campus</span><p class="card-desc">El mas completo</p><span class="card-price">desde $2.75</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_desayunos.jpg" alt="Americano"><div class="card-ov ov-navy"><span class="card-name">Americano</span><p class="card-desc">El clasico</p><span class="card-price">$1.80</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_cafeteria.jpg" alt="Amarillon"><div class="card-ov ov-amber"><span class="card-name">Amarillon</span><p class="card-desc">Con huevo bien amarillado</p><span class="card-price">$2.10</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_desayunos.jpg" alt="Ensenada"><div class="card-ov ov-green"><span class="card-name">Ensenada</span><p class="card-desc">El desayuno de los que saben</p><span class="card-price">$2.85</span></div></div>
+      <div class="card"><img src="KitDiseno/portada_cafeteria.jpg" alt="Ranchero"><div class="card-ov ov-teal"><span class="card-name">Ranchero</span><p class="card-desc">Estilo ranchero</p><span class="card-price">$2.99</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Y hay mucho mas...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_desayunos.jpg')">Ver Menu Completo</button></div>
+  </div>
+  <div class="panel" id="p-hambur">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="Campus Burger"><div class="card-ov ov-amber"><span class="card-name">Campus Burger</span><p class="card-desc">Doble carne, cheddar</p><span class="card-price">$4.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="Bacon Burger"><div class="card-ov ov-navy"><span class="card-name">Bacon Cheese Burger</span><p class="card-desc">Bacon crocante, queso fundido</p><span class="card-price">$3.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="Hawaiiana"><div class="card-ov ov-teal"><span class="card-name">Hawaiiana Burger</span><p class="card-desc">Con pina caramelizada</p><span class="card-price">$3.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="La Humilde"><div class="card-ov ov-green"><span class="card-name">La Humilde</span><p class="card-desc">Pequena pero perfecta</p><span class="card-price">$2.60</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_hamburguesas_hot_dogs.jpg" alt="Dog Campus"><div class="card-ov ov-gold"><span class="card-name">Dog Campus</span><p class="card-desc">El hot dog definitivo</p><span class="card-price">$1.60</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Y tambien papas fritas...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_hamburguesas_hot_dogs.jpg')">Ver Menu Completo</button></div>
+  </div>
+  <div class="panel" id="p-alitas">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/menu_alitas_costillas.jpg" alt="Alitas Campus"><div class="card-ov ov-amber"><span class="card-name">Alitas Campus</span><p class="card-desc">Crujientes por fuera, jugosas por dentro</p><span class="card-price">desde $5.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_alitas_costillas.jpg" alt="Costillas BBQ"><div class="card-ov ov-navy"><span class="card-name">Costillas BBQ</span><p class="card-desc">Salsa artesanal, a fuego lento</p><span class="card-price">desde $7.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_ensaladas_nachos.jpg" alt="Nachos"><div class="card-ov ov-gold"><span class="card-name">Nachos Campus</span><p class="card-desc">Queso fundido, guacamole</p><span class="card-price">desde $4.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_ensaladas_nachos.jpg" alt="Ensalada"><div class="card-ov ov-green"><span class="card-name">Ensalada Campus</span><p class="card-desc">Fresca y colorida</p><span class="card-price">desde $3.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_papas_fritas.jpg" alt="Papas"><div class="card-ov ov-teal"><span class="card-name">Papas Especiales</span><p class="card-desc">Crujientes con salsas</p><span class="card-price">desde $2.50</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Pedimos algo para compartir?</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_alitas_costillas.jpg')">Ver Menu Completo</button></div>
+  </div>
+  <div class="panel" id="p-bebidas">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/portada_bebidas.jpg" alt="Cocteles"><div class="card-ov ov-teal"><span class="card-name">Cocteles Campus</span><p class="card-desc">Los tragos que te hacen volver</p><span class="card-price">desde $4.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_bebidas_cervezas.jpg" alt="Cervezas"><div class="card-ov ov-amber"><span class="card-name">Cervezas</span><p class="card-desc">Nacionales e importadas</p><span class="card-price">desde $1.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_bebidas_granizados.jpg" alt="Granizados"><div class="card-ov ov-gold"><span class="card-name">Granizados</span><p class="card-desc">Para los dias de calor</p><span class="card-price">desde $1.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_bebidas_sin_alcohol.jpg" alt="Sin alcohol"><div class="card-ov ov-green"><span class="card-name">Sin Alcohol</span><p class="card-desc">Jugos y limonadas</p><span class="card-price">desde $1.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_bebidas_con_alcohol.jpg" alt="Licores"><div class="card-ov ov-navy"><span class="card-name">Licores y Shots</span><p class="card-desc">Para las noches campus</p><span class="card-price">desde $2.00</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Salud, Campus te espera...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_bebidas_cocteles.jpg')">Ver Carta Completa</button></div>
+  </div>
+  <div class="panel" id="p-cafe">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/menu_cafeteria.jpg" alt="Cafe Artesanal"><div class="card-ov ov-amber"><span class="card-name">Cafe Artesanal</span><p class="card-desc">Espresso, cappuccino, latte</p><span class="card-price">desde $1.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_cafeteria.jpg" alt="Bebidas Calientes"><div class="card-ov ov-navy"><span class="card-name">Bebidas Calientes</span><p class="card-desc">Chocolates e infusiones</p><span class="card-price">desde $1.20</span></div></div>
+      <div class="card"><img src="KitDiseno/portada_cafeteria.jpg" alt="Cafe Campus"><div class="card-ov ov-gold"><span class="card-name">Cafe Campus</span><p class="card-desc">Mezcla exclusiva de la casa</p><span class="card-price">$1.80</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_cafeteria.jpg" alt="Frappes"><div class="card-ov ov-teal"><span class="card-name">Frappes</span><p class="card-desc">Frios y cremosos</p><span class="card-price">desde $2.50</span></div></div>
+      <div class="card"><img src="KitDiseno/portada_cafeteria.jpg" alt="Meriendas"><div class="card-ov ov-green"><span class="card-name">Meriendas</span><p class="card-desc">Pan y snacks con el cafe</p><span class="card-price">desde $0.80</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Ven y prueba nuestro cafe...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_cafeteria.jpg')">Ver Menu Completo</button></div>
+  </div>
+  <div class="panel" id="p-especiales">
+    <div class="mosaic">
+      <div class="card"><img src="KitDiseno/menu_platos_especiales.jpg" alt="Plato Especial"><div class="card-ov ov-gold"><span class="card-name">Plato Especial Campus</span><p class="card-desc">El plato estrella de la casa</p><span class="card-price">desde $6.50</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_platos_especiales.jpg" alt="Chef"><div class="card-ov ov-amber"><span class="card-name">Especial del Chef</span><p class="card-desc">Siempre una sorpresa</p><span class="card-price">desde $5.50</span></div></div>
+      <div class="card"><img src="KitDiseno/portada_menu_comida.jpg" alt="Bandeja"><div class="card-ov ov-navy"><span class="card-name">Bandeja Campus</span><p class="card-desc">Carne, arroz y ensalada</p><span class="card-price">desde $7.00</span></div></div>
+      <div class="card"><img src="KitDiseno/portada_menu_comida.jpg" alt="Mixto"><div class="card-ov ov-green"><span class="card-name">Mixto Campus</span><p class="card-desc">Un poco de todo lo mejor</p><span class="card-price">desde $8.00</span></div></div>
+      <div class="card"><img src="KitDiseno/menu_platos_especiales.jpg" alt="Del Dia"><div class="card-ov ov-teal"><span class="card-name">Especial del Dia</span><p class="card-desc">Pregunta siempre por el del dia</p><span class="card-price">Consultar</span></div></div>
+    </div>
+    <div class="menu-foot"><span class="menu-note">Siempre hay algo especial...</span><button class="btn-dark" onclick="window.open('KitDiseno/menu_platos_especiales.jpg')">Ver Carta Completa</button></div>
+  </div>
 </section>
 
 </body>
