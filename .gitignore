@@ -3,6 +3,11 @@
 *.xlsx
 *.xls
 
+# Carpetas de trabajo local (assets, kits de diseño, archivos de inspiración)
+# No son demos desplegables en GitHub Pages
+Clinica/
+Gimnasio/
+
 # OS
 .DS_Store
 Thumbs.db
