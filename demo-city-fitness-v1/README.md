@@ -17,7 +17,7 @@ demo-city-fitness-v1/
 ├── index.html        # Página principal (12 secciones)
 ├── css/style.css     # Design system dark mode
 ├── js/main.js        # IIFE vanilla JS
-└── ../ImagenesEmpresa/  # Assets de la marca (procesados con AntiGravity CLI)
+└── ../ImagenesEmpresa/  # Assets de la marca (logo oficial + imágenes procesadas con AntiGravity CLI)
 ```
 
 ## Design system
