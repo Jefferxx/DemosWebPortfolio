@@ -587,6 +587,49 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
   </div>
 </section>
 
+<!-- FAQ -->
+<section class="s-faq reveal" id="faq">
+  <div class="faq-head">
+    <span class="eyebrow">Resolvemos tus dudas</span>
+    <h2>PREGUNTAS FRECUENTES</h2>
+  </div>
+  <div class="faq-list">
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Aceptan reservas?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>No manejamos reservas. El acceso es libre, por orden de llegada. Para grupos de más de 8 personas te recomendamos escribirnos por WhatsApp con anticipación y coordinar el espacio.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cuáles son los horarios?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Abrimos de lunes a domingo desde las 07:00. Cerramos de lunes a miércoles a las 22:00, jueves a las 23:00, viernes a las 00:00, sábado a la 01:00 y domingo a las 22:00.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Cómo sé cuál es el almuerzo del día?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>El menú de almuerzo cambia cada día y lo publicamos en nuestras redes sociales. También puedes consultarnos directamente por WhatsApp y te respondemos al instante.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Aceptan tarjetas o solo efectivo?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Actualmente trabajamos con efectivo y transferencias bancarias. Pronto habilitaremos pago con tarjeta. Cualquier duda sobre formas de pago puedes consultarnos antes de venir.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Tienen WiFi gratuito?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Sí, contamos con WiFi gratuito para todos nuestros clientes. Solo pide la contraseña al staff al momento de tu visita.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Hay opciones sin alcohol?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Sí. Tenemos granizados artesanales, jugos naturales, limonadas, aguas, chocolates calientes y toda nuestra carta de cafetería disponible a cualquier hora del día.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Hacen eventos o celebraciones privadas?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Sí coordinamos espacios para eventos según disponibilidad. Escríbenos por WhatsApp con el tamaño de tu grupo y la fecha que tienes en mente y te damos todos los detalles.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)">¿Tienen parqueo?<span class="faq-icon">+</span></button>
+      <div class="faq-a"><p>Hay parqueo en la vía pública frente al local. El acceso es libre y sin costo. Estamos ubicados en Av. Milton Reyes y Av. 11 de Noviembre, Riobamba.</p></div>
+    </div>
+  </div>
+</section>
+
+
 <!-- FOOTER -->
 <footer>
   <div class="ft-top">
@@ -653,6 +696,12 @@ function openLbox(src){
 function closeLbox(){
   document.getElementById('lbox').classList.remove('open');
   document.body.style.overflow='';
+}
+function toggleFaq(btn){
+  const item=btn.parentElement;
+  const isOpen=item.classList.contains('open');
+  document.querySelectorAll('.faq-item.open').forEach(i=>i.classList.remove('open'));
+  if(!isOpen)item.classList.add('open');
 }
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeLbox()});
 </script>
