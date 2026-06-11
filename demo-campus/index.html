@@ -199,6 +199,22 @@ footer{background:var(--navy);border-top:1px solid var(--border);padding:48px 80
 .rev-name{font-weight:700;font-size:.85rem;color:#fff;margin:0}
 .rev-loc{font-size:.75rem;color:var(--txt-sec);margin:2px 0 0}
 @media(max-width:768px){.s-reviews{padding:64px 0}.s-reviews .sec-head{padding:0 24px}.rev-card{width:260px;padding:24px 20px}.reviews-track{animation-duration:30s}.reviews-track-wrap::before,.reviews-track-wrap::after{width:48px}}
+
+/* FAQ */
+.s-faq{background:var(--cream);color:var(--navy);padding:96px 80px}
+.faq-head{text-align:center;margin-bottom:56px}
+.faq-head h2{font-family:'Bebas Neue',sans-serif;font-size:clamp(2.5rem,4vw,3.5rem);letter-spacing:.05em;color:var(--navy);margin-bottom:0}
+.faq-list{max-width:780px;margin:0 auto}
+.faq-item{border-bottom:1px solid rgba(6,11,30,.12)}
+.faq-item:first-child{border-top:1px solid rgba(6,11,30,.12)}
+.faq-q{width:100%;background:none;border:none;padding:20px 0;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-family:'Outfit',sans-serif;font-size:1rem;font-weight:700;color:var(--navy);text-align:left;gap:16px;transition:color .2s}
+.faq-q:hover{color:var(--amber)}
+.faq-icon{font-size:1.5rem;font-weight:300;line-height:1;flex-shrink:0;transition:transform .3s;color:var(--gold)}
+.faq-item.open .faq-icon{transform:rotate(45deg)}
+.faq-a{max-height:0;overflow:hidden;transition:max-height .35s ease}
+.faq-item.open .faq-a{max-height:320px}
+.faq-a p{padding:0 0 20px;color:#334155;font-size:.95rem;line-height:1.75;margin:0}
+@media(max-width:768px){.s-faq{padding:64px 24px}.faq-q{font-size:.9rem;padding:18px 0}}
 </style>
 </head>
 <body>
