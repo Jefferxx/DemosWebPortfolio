@@ -2,11 +2,173 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="refresh" content="0; url=demo-clinica-v2/">
-  <link rel="canonical" href="demo-clinica-v2/">
-  <title>DemosWebPortfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konverter — Demos de Landing Pages</title>
+  <meta name="robots" content="noindex, nofollow">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:           #0c0c10;
+      --surface:      #16161f;
+      --border:       #2a2a38;
+      --border-hover: #7c6aff;
+      --text:         #e2e2eb;
+      --muted:        #7a7a96;
+      --accent:       #7c6aff;
+      --accent-hover: #9580ff;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 48px 20px;
+    }
+
+    header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--accent);
+      margin-bottom: 14px;
+    }
+
+    h1 {
+      font-size: clamp(26px, 5vw, 38px);
+      font-weight: 700;
+      color: #fff;
+      margin-bottom: 10px;
+      letter-spacing: -0.5px;
+    }
+
+    .subtitle {
+      color: var(--muted);
+      font-size: 14px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: 18px;
+      width: 100%;
+      max-width: 940px;
+    }
+
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 28px 24px;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      transition: border-color 0.18s ease, transform 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .card:hover {
+      border-color: var(--border-hover);
+      transform: translateY(-4px);
+      box-shadow: 0 8px 32px rgba(124, 106, 255, 0.12);
+    }
+
+    .card-tag {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .card-business {
+      font-size: 19px;
+      font-weight: 700;
+      color: #fff;
+      line-height: 1.2;
+    }
+
+    .card-niche {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .card-cta {
+      margin-top: 8px;
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+
+    .card:hover .card-cta {
+      color: var(--accent-hover);
+    }
+
+    footer {
+      margin-top: 52px;
+      text-align: center;
+      font-size: 12px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+  </style>
 </head>
 <body>
-  <p>Redirigiendo… <a href="demo-clinica-v2/">haz clic aquí si no redirige automáticamente</a>.</p>
+
+  <header>
+    <p class="label">Konverter · Portfolio</p>
+    <h1>Demos de Landing Pages</h1>
+    <p class="subtitle">Demos por nicho &mdash; Riobamba, Ecuador &middot; HTML5 + CSS3 + Vanilla JS</p>
+  </header>
+
+  <main class="grid">
+
+    <a class="card" href="demo-clinica-v2/">
+      <span class="card-tag">Clínica médica &middot; V2</span>
+      <span class="card-business">MEDICGAR</span>
+      <span class="card-niche">Centro de Especialidades Médicas &mdash; convenios, club de beneficios y agenda online</span>
+      <span class="card-cta">Ver demo →</span>
+    </a>
+
+    <a class="card" href="demo-campus/">
+      <span class="card-tag">Cafetería / Pub híbrido</span>
+      <span class="card-business">Campus Coffee &amp; Beer</span>
+      <span class="card-niche">Menú interactivo con 6 categorías, horarios y lightbox de fotos</span>
+      <span class="card-cta">Ver demo →</span>
+    </a>
+
+    <a class="card" href="demo-city-fitness-v1/">
+      <span class="card-tag">Gimnasio &middot; V1</span>
+      <span class="card-business">City Fitness Riobamba</span>
+      <span class="card-niche">2 sedes, 5 planes, clases grupales y tabla de horarios semanal</span>
+      <span class="card-cta">Ver demo →</span>
+    </a>
+
+  </main>
+
+  <footer>
+    <p>Sin frameworks &middot; Mobile-first &middot; Sin dependencias externas</p>
+  </footer>
+
 </body>
 </html>
