@@ -237,7 +237,7 @@ ul { list-style: none; }
 .hero-bg {
   position: absolute;
   inset: 0;
-  background-image: url('../ImagenesEmpresa/city_fitness_fachada_ubicacion.jpeg');
+  background-image: url('../../ImagenesEmpresa/city_fitness_fachada_ubicacion.jpeg');
   background-size: cover;
   background-position: center 30%;
   filter: brightness(.35) saturate(.8);
