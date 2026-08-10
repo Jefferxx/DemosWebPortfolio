@@ -31,3 +31,17 @@ DemosWebPortfolio/
 - Vanilla JS: IntersectionObserver, tabs, lightbox modal, counters animados
 - Google Fonts (varía por demo: Outfit, Bebas Neue, Pacifico, Inter, Permanent Marker)
 - Sin dependencias externas, sin frameworks
+
+---
+
+## Contrato bidireccional
+
+| Campo | Valor |
+|---|---|
+| **Rol** | Artefacto desplegable — lo que GitHub Pages publica |
+| **Unidad de negocio** | KONVERTER WEB |
+| **Fuente de los assets** | `..\prospectos\<slug>\assets\` — reconciliar con `..\sync_assets.ps1` |
+| **Documentación** | `Obsidian_Notas\50_KONVERTER\10_Unidades\WEB\Demos\` |
+| **Decisión que lo explica** | `ADR-004-Entidad-Cliente-y-Modelo-Fuente-Artefacto` |
+
+> Los assets que estas demos sirven están duplicados a propósito entre la fuente y este repo: GitHub Pages solo publica lo que está dentro del repositorio. **Editar siempre la fuente** y ejecutar `sync_assets.ps1`.
